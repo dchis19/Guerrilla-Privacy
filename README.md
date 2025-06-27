@@ -15,7 +15,7 @@ We propose a new mechanism for masking one's web identity by leveraging cloud co
 ## Architecture
 
 #### Deploying the Infrastructure
-![Architecture Deployment](Anti-Fingerprinting-Architecture.png)
+![Architecture Deployment](architecture-deployment.png)
 1. The first step is deploying the IaC (primary file is guerrilla-privacy.ts). Within the IaC, numerous Lambda functions are created and many of these Lambdas are only ran during initial IaC deployment. The code for the lambda functions can be found in the src/lambda directory. 
 2. When the CDK is deployed, the master key pair is stored into Parameter Store via the create_keypair.py Lambda. This allows the key pair to be utilized later to decrypt the Windows admin password and store it into Parameter Store. 
 ---The Following Lambdas Are Deployed But Not Ran---
@@ -25,7 +25,7 @@ We propose a new mechanism for masking one's web identity by leveraging cloud co
 5. The password_handler.py Lambda is deployed, which will be used at a later time to retrieve the EC2 Windows admin password. This function relies on the rsa-layer.zip file, which holds the libraries for rsa encryption/decryption.
 6. Once the initial deployment occurs, the below steps are followed for the remainder of the time. 
 
-![Architecture](architecture.png)
+![Architecture](Anti-Fingerprinting-Architecture.png)
 ##### NOTE: This architecture is deployed in Amazon Web Services (AWS) using the AWS Cloud Development Kit (CDK). 
 
 #### Storing of EC2 Passwords
