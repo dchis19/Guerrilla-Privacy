@@ -1,15 +1,12 @@
-# NOTE TO READER
-THIS SOURCE CODE IS NOT AUTHORIZED FOR DISTRIBUTION AS IT HAS NOT UNDERGONE APPLICATION SECURITY REVIEWS. THIS CODE IS SOLELY INTENDED FOR EN.605.731.81.SP25. PLEASE CONTACT DCHISNER@AMAZON.COM FOR FURTHER QUESTIONS/UPDATES.  
+## Disclaimer 
+
+This code has **NOT** undergone an official security review and was created for a Johns Hopkins University cloud security course as a proof of concept to see if device fingerprinting techniques would pull identifiers for cloud VMs rather than client device identifiers. It is highly recommended to conduct your own security review before deploying the guerrilla privacy application. 
 
 # Guerrilla Privacy Application
 
 Today's device fingerprinting mechanisms allow entities to track users across the Web, often without end users' knowledge or consent. Device and browser fingerprinting is nearly impossible to overcome and requires a mixture of privacy-enhanced browsers, Virtual Private Networks (VPNs), and other masking techniques to reduce detection. Unfortunately, adding such protections either creates signatures of their own for fingerprinting technologies or destroys the user's accessibility to websites.
 
 We propose a new mechanism for masking one's web identity by leveraging cloud compute resources and the fundamentals of guerrilla and maneuver warfare to allow users to privately browse the Internet. By using cloud-based virtual machines (VM), the VM will be fingerprinted instead of the end-user's personal device, giving privacy back to the end user. Drawing on the concepts of constantly maneuvering to create a rapidly deteriorating situation for an enemy as taught by United States Marine Corps doctrine, we explore terminating and creating new virtual instances for browsing sessions with the expectation that a new device/browser ID is generated, making an individual end user appear as multiple entities/devices from different parts of the world. 
-
-## Disclaimer 
-
-This code has **NOT** undergone an official security review and was created for a Johns Hopkins University cloud security course as a proof of concept to see if device fingerprinting techniques would pull identifiers for cloud VMs rather than client device identifiers. It is highly recommended to conduct your own security review before deploying the guerrilla privacy application. 
 
 ## SECURITY NOTES!!
 * Ensure you update the instance security group and SNS email in the guerrilla-privacy.ts file. You can ctrl+F "//UPDATE THE IP ADDRESS" and 'UPDATE-WITH-YOUR-EMAIL@email.com' to find the security group and SNS configurations that need to be changed. 
