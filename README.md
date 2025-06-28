@@ -97,7 +97,25 @@ You can look at the Makefile in the parent directory for comments on what each c
 
 ## Establishing the RDP Connection 
 - Specify the DNS name (found under AWS Management Console -> EC2 -> Load Balancing) and click to connect to the Network Load Balancer (NLB). This will load balance you to an EC2.
-- Note: you have (15) minutes to login and browse before this instance is terminated.  
+- You will be prompted for credentials to login to the EC2. At this point, you have established a RDP connection.
+- A log will be sent to CloudWatch showing that a public IP has connected to the EC2 instance. This eventually will trigger an email with the password to the EC2 to be sent to the email address specified in guerrilla-privacy.ts.
+- Use the below log in instructions to log into the EC2.
+- An example email is shown below. The last line of JSON is the instance password. 
+```JSON
+{
+  "timestamp": "2025-03-22T01:24:39.217882",
+  "source_ip": "10.0.213.193",
+  "destination_ip": "73.123.345.567",
+  "instance_id": "i-07a5a0365b74c778f",
+  "interface_id": "eni-0cca54603032f67ba",
+  "connection_type": "RDP",
+  "nlb_dns": "guerri-RDPNL-pWFF82r3zjcQ-436b5e8da1d32598.elb.us-east-1.amazonaws.com",
+  "vpc_id": "vpc-0b72de73c41220288",
+  "eni_instance_id": "i-07a5a0365b74c778f",
+  "instance_password": "S@L5-!fYA3SkTmnzg4tSWGh4;P(rlQ$C"
+}
+```
+- Note: At the end of the workflow that sends the password to your email, you have (15) minutes to login and browse before this instance is terminated.
 
 ## Logging In 
 - Username: Administrator
