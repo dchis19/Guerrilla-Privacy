@@ -100,7 +100,7 @@ You can look at the Makefile in the parent directory for comments on what each c
 - You will be prompted for credentials to login to the EC2. At this point, you have established a RDP connection.
 - A log will be sent to CloudWatch showing that a public IP has connected to the EC2 instance. This eventually will trigger an email with the password to the EC2 to be sent to the email address specified in guerrilla-privacy.ts.
 - Use the below log in instructions to log into the EC2.
-- An example email is shown below. The last line of JSON is the instance password. 
+- An example email is shown below. The last line of JSON is the instance password. Do not include the double quotes in the password. 
 ```JSON
 {
   "timestamp": "2025-03-22T01:24:39.217882",
